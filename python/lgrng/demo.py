@@ -45,8 +45,9 @@ def demo(f, x, xx):
 	error = np.max(error)
 		
 	ax = plt.gca()
-	plt.text(0.4, 0.2, 'Error = '+str(error), transform=ax.transAxes)
+	#plt.text(0.4, 0.2, 'Error = '+str(error), transform=ax.transAxes)
 	plt.axis([np.min(x), np.max(x), np.min(y), np.max(y)])
+	return error
 
 
 def unifvscheb(n):
