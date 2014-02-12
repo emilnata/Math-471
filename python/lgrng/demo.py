@@ -18,7 +18,7 @@ def evalnfit(f, x, xx):
 	yy = lgrng.interp(x, y, xx)
 	return y, yy
 
-def demo(f, x, xx):
+def demo(f, x, xx, showplot='yes'):
 	"""\
 	plot(f, x, xx):
 	f = function to be interpolated
@@ -28,25 +28,28 @@ def demo(f, x, xx):
 	"""
 	from matplotlib import pyplot as plt
 	y, yy = evalnfit(f, x, xx)
-	plt.plot(x, y, 'ro')
-	plt.plot(xx, yy, 'k')
+	
 	
 	zz = np.zeros(xx.shape)
 	for i,xp in enumerate(xx):
 		zz[i] = f(xp)
-		
-	plt.plot(xx, zz, 'b')
 
-	plt.axis('tight')
-	plt.xlabel('x')
-	plt.ylabel('y')
+	if(showplot == 'yes'):
+		plt.plot(x, y, 'ro')
+		plt.plot(xx, yy, 'k')
+		plt.plot(xx, zz, 'b')
+		plt.axis('tight')
+		plt.xlabel('x')
+		plt.ylabel('y')
+		ax = plt.gca()
+		#plt.text(0.4, 0.2, 'Error = '+str(error), 
+		#	 transform=ax.transAxes)
+		plt.axis([np.min(x), np.max(x), np.min(y), np.max(y)])
 
 	error = np.abs(zz - yy)
 	error = np.max(error)
 		
-	ax = plt.gca()
-	#plt.text(0.4, 0.2, 'Error = '+str(error), transform=ax.transAxes)
-	plt.axis([np.min(x), np.max(x), np.min(y), np.max(y)])
+	
 	return error
 
 

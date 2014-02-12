@@ -17,9 +17,8 @@ def pblm5():
 	from matplotlib import pyplot as plt
 	for i,n in enumerate(nlist):
 		x = lg.gr.unif(n)
-		elist[i] = lg.demo(hat, x, xx)
+		elist[i] = lg.demo(hat, x, xx, showplot='no')
 		plt.close()
-		
 		
 	plt.semilogy(nlist, elist, lw = 2, c='r')
 	plt.axis('tight')
@@ -36,15 +35,13 @@ def pblm6():
 	from matplotlib import pyplot as plt
 	for i,n in enumerate(nlist):
 		x = lg.gr.cheb(n)
-		elist[i] = lg.demo(hat, x, xx)
-		plt.close()
-		
-		
-		plt.loglog(nlist, elist, lw = 2, c='r')
-		plt.axis('tight')
-		plt.grid()
-		plt.title('error in |x|, interp at cheb pts, vs n')
-		plt.show()
+		elist[i] = lg.demo(hat, x, xx, showplot='no')
+
+	plt.loglog(nlist, elist, lw = 2, c='r')
+	plt.axis('tight')
+	plt.grid()
+	plt.title('error in |x|, interp at cheb pts, vs n')
+	plt.show()
 		
 def pblm7():
 	nlist = array([5, 10, 20, 30, 40, 50, 100])
@@ -54,15 +51,12 @@ def pblm7():
 	from matplotlib import pyplot as plt
 	for i,n in enumerate(nlist):
 		x = lg.gr.cheb(n)
-		elist[i] = lg.demo(sin4px, x, xx)
-		plt.close()
+		elist[i] = lg.demo(sin4px, x, xx, showplot='no')
 		
-		
+	
 	plt.semilogy(nlist, elist, lw = 2, c='r')
 	plt.axis('tight')
 	plt.grid()
-	plt.title('error in |x|, interp at cheb pts, vs n')
+	plt.title('error in $sin4\pi x$, interp at cheb pts, vs n')
 	plt.show()
 	
-if __name__ == '__main__':
-	pblm7()

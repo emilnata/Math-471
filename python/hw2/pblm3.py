@@ -16,7 +16,7 @@ def plot(n, c):
         y = chebn(x, n)
         plt.plot(x, y, lw = 2, c = c)
 
-if __name__ == '__main__':
+def pblm3():
         plot(0, 'm')
         plot(1, 'k')
         plot(2, 'r')
@@ -26,4 +26,5 @@ if __name__ == '__main__':
         from matplotlib import pyplot as plt
         plt.axis('tight')
         plt.grid()
+	plt.title('Chebyshev polynomials $T_0(x)$ through $T_n(x)$');
         plt.show()
