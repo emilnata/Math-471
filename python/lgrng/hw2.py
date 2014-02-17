@@ -2,7 +2,7 @@ import lgrng as lg
 import numpy as np
 from numpy import array
 
-def chebn(x, n):
+def evalchebn(x, n):
 	"""\
 	eval T_n(x)
 	"""
@@ -17,7 +17,7 @@ def plot(n, c):
 	from matplotlib import pyplot as plt
 	import numpy as np
 	x = np.linspace(-1,1,500)
-	y = chebn(x, n)
+	y = evalchebn(x, n)
 	plt.plot(x, y, lw = 2, c = c)
 
 def pblm3():
@@ -48,7 +48,7 @@ def pblm5():
 	from matplotlib import pyplot as plt
 	for i,n in enumerate(nlist):
 		x = lg.gr.unif(n)
-		elist[i] = lg.demo(hat, x, xx, showplot='no')
+		elist[i] = lg.demo.demo(hat, x, xx, showplot='no')
 		plt.close()
 		
 	plt.semilogy(nlist, elist, lw = 2, c='r')
@@ -66,7 +66,7 @@ def pblm6():
 	from matplotlib import pyplot as plt
 	for i,n in enumerate(nlist):
 		x = lg.gr.cheb(n)
-		elist[i] = lg.demo(hat, x, xx, showplot='no')
+		elist[i] = lg.demo.demo(hat, x, xx, showplot='no')
 
 	plt.loglog(nlist, elist, lw = 2, c='r')
 	plt.axis('tight')
@@ -82,7 +82,7 @@ def pblm7():
 	from matplotlib import pyplot as plt
 	for i,n in enumerate(nlist):
 		x = lg.gr.cheb(n)
-		elist[i] = lg.demo(sin4px, x, xx, showplot='no')
+		elist[i] = lg.demo.demo(sin4px, x, xx, showplot='no')
 		
 	
 	plt.semilogy(nlist, elist, lw = 2, c='r')

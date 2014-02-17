@@ -1,9 +1,9 @@
 import numpy as np
 import lgrng
 
-def evalnfit(f, x, xx):
+def evalNinterp(f, x, xx):
 	"""\
-	evalnfit(f, x, xx):
+	evalNinterp(f, x, xx):
 	f = function being tested
 	x = grid points
 	xx = points for interpolation
@@ -27,7 +27,7 @@ def demo(f, x, xx, showplot='yes'):
 	plots interpolant and returns maximum error
 	"""
 	from matplotlib import pyplot as plt
-	y, yy = evalnfit(f, x, xx)
+	y, yy = evalNinterp(f, x, xx)
 	
 	
 	zz = np.zeros(xx.shape)
