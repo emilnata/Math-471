@@ -1,4 +1,4 @@
 import round
-round.diff.demo()
-from matplotlib import pyplot as plt
-plt.show()
+round.binary(1.0)
+
+round.binary(2.0)
