@@ -1,4 +1,3 @@
-import round
-round.binary(1.0)
-
-round.binary(2.0)
+import ieee
+import numpy as np
+ieee.cancel.demo(np.pi, 1.0)
