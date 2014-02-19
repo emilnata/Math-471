@@ -12,4 +12,4 @@ def demo(x, y):
         print()
         diff = (x+s) - (y+s)
         print('(x+s)-(y+s) = '.rjust(16,' '), '{0:.16f}'.format(diff), 
-              's = '.rjust(6,' '), s)
+              's = '.rjust(6,' '), '{0:.3e}'.format(s))

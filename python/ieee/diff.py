@@ -15,8 +15,8 @@ def error(h):
     
     y = f(x)
     dy = df(x)
-    dyc = ncalc.diff.fwd(y, h)
-    err = max(abs(dy[:-1]-dyc))
+    dyf = ncalc.diff.fwd(y, h)
+    err = max(abs(dy[:-1]-dyf))
     return err
 
 def demo():
@@ -34,3 +34,5 @@ def demo():
 
     from matplotlib import pyplot as plt
     plt.loglog(h, err)
+    plt.xlabel('h')
+    plt.ylabel('error in fwd difference')

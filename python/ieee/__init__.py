@@ -21,4 +21,4 @@ def binary(num):
     print('  exponent bits = ', s[1:12])
     print(' precision bits = ', s[12:],'\n')
     print(' exponent value = ', int(s[1:12], 2))
-
+    print('  effective exp = ', int(s[1:12],2)-1023)
