@@ -1,8 +1,8 @@
 from __future__ import print_function
 from . import diff
 from . import cancel
-#from . import intg
-#from . import variance
+from . import intg
+from . import stdd
 
 def byte2int(c):
     if isinstance(c, str): #python2

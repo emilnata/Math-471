@@ -1,22 +1,18 @@
 import ncalc
-from ncalc.test import f #sin(pi*x)
-from ncalc.test import df #pi*cos(pi*x)
 
-
-def error(h):
+def errorf(f, df, x, h):
     """\
-    error(h): x = n*[0,h,..99*h]
-    find error in df computed using fwd differences
+    error(f, df, x, h): 
+    find error in df computed using fwd differences at x
     return error (h = const intvl spacing)
     """
     import numpy as np
-    x = np.arange(0,100)
-    x = 1.0+ 1.0*h*x
+    xx = np.array([x, x+h], dtype=float)
     
-    y = f(x)
+    y = f(xx)
     dy = df(x)
-    dyf = ncalc.diff.fwd(y, h)
-    err = max(abs(dy[:-1]-dyf))
+    dyf = ncalc.diff.fwd(y, h)[0]
+    err = abs(dy-dyf)
     return err
 
 def demo():
@@ -28,9 +24,11 @@ def demo():
     err = np.empty(l)
     h = np.empty(l)
     
+    from ncalc.test import f #sin(pi*x)
+    from ncalc.test import df #pi*cos(pi*x)
     for i,n in enumerate(nlist):
         h[i] = 1.0/n
-        err[i] = error(h[i])
+        err[i] = errorf(f, df, 1.4, h[i])
 
     from matplotlib import pyplot as plt
     plt.loglog(h, err)
