@@ -14,7 +14,7 @@ def demo():
     
     a = 0
     b = 1
-    nlist = [10, 10**2, 10**3, 10**4, 10**5, 10**6, 10**7]
+    nlist = [10, 10**2, 10**3, 10**4, 10**5, 10**6, 10**7, 10**8]
     import numpy as np
     I = np.pi/4.0
     h = np.empty(len(nlist))
