@@ -2,6 +2,7 @@ from . import diff
 from . import diff2
 from . import intg
 from . import test
+from . import hw3
 
 def eval(f, x):
     """\
