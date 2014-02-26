@@ -26,7 +26,7 @@ def demo():
     
     from ncalc.test import f #sin(pi*x)
     from ncalc.test import df #pi*cos(pi*x)
-    x = 1.0
+    x = 1.2
     for i,n in enumerate(nlist):
         h[i] = 1.0/n
         err[i] = errorf(f, df, x, h[i])
